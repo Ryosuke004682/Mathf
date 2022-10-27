@@ -153,7 +153,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_Intensity: 10
-  m_Range: 12.76
+  m_Range: 15.2
   m_SpotAngle: 112
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60669549}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 9.97, z: -0}
+  m_LocalPosition: {x: 0, y: 11.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -415,7 +415,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
   m_LocalRotation: {x: -0.59486854, y: -0.20391338, z: -0.15939453, w: 0.7610152}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: -0.19, y: 4.52, z: 0.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -520,6 +520,7 @@ GameObject:
   - component: {fileID: 971564971}
   - component: {fileID: 971564975}
   - component: {fileID: 971564976}
+  - component: {fileID: 971564977}
   m_Layer: 0
   m_Name: player
   m_TagString: Untagged
@@ -615,12 +616,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 971564969}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf4b28f5a0e5d9448a720625ae007127, type: 3}
+  m_Script: {fileID: 11500000, guid: fa876b466bbbc894cbe2a56eb64c510a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rend: {fileID: 0}
-  colorCube: {r: 0.2259376, g: 1, b: 0, a: 1}
+  position: {x: 0, y: 6, z: 0}
+  velocity: {x: 0.1, y: 0, z: 0}
+  basePosition: {x: 0, y: 0, z: 0}
+  baseVelocity: {x: 0, y: 0, z: 0}
+  gravity: -0.003
 --- !u!114 &971564976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 971564969}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172596be3c61e1e438fb46d108a2d83b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: -5, y: 0.5, z: 0}
+  velocity: {x: 0.1, y: 0.2, z: 0}
+  basePosition: {x: 0, y: 0, z: 0}
+  baseVelocity: {x: 0, y: 0, z: 0}
+  gravity: -0.003
+--- !u!114 &971564977
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -629,10 +650,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 971564969}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0230747b526dc2a4e97fe01ce64f5899, type: 3}
+  m_Script: {fileID: 11500000, guid: 36d5e748fe26bbb42a1e026e7e0019d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 0.1
+  position: {x: -5, y: 0.5, z: 0}
+  velocity: {x: 0.1, y: 0.2, z: 0}
+  basePosition: {x: 0, y: 0, z: 0}
+  gravity: -0.003
+  time: 0
 --- !u!1 &1823893064
 GameObject:
   m_ObjectHideFlags: 0
