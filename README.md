@@ -11,5 +11,5 @@ Repository for tidily implementing mathematics.
 ・Integral "Implementation of parabolic motion with infinitesimal time"  
 (積分「無限小の時間を用いた放物線運動の実装」)
 
-・Circular Motion, "Implementation of Circular Motion by Centripetal Force"
+・Circular Motion, "Implementation of Circular Motion by Centripetal Force"  
 （円運動、「向心力による円運動の実装」）
