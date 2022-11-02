@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InstanceObject_Transform : MonoBehaviour
 {
-    public GameObject _object;
+    public GameObject cube;
     private int _count = 0;
     private const int _objectCount = 11;
 
@@ -14,15 +14,15 @@ public class InstanceObject_Transform : MonoBehaviour
     {
         GameObject obj;
         
-        for(var instanceObj = 0; instanceObj > _objectCount; instanceObj++)
+        for(var instanceObj = 0; instanceObj < _objectCount; instanceObj++)
         {
-            obj = Instantiate(_object);
+            obj = Instantiate(cube);
             obj.transform.position = new Vector3((instanceObj - _objectCount / 2) * _interval, 0.0f, 0.0f);
 
-            obj = Instantiate(_object);
+            obj = Instantiate(cube);
             obj.transform.position = new Vector3(0.0f, (instanceObj - _objectCount / 2) * _interval, 0.0f);
 
-            obj = Instantiate(_object);
+            obj = Instantiate(cube);
             obj.transform.position = new Vector3(0.0f,0.0f,(instanceObj - _objectCount / 2) * _interval);
 
         }
