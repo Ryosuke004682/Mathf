@@ -8,7 +8,7 @@ public class Pythagorean_theorem : MonoBehaviour
     //斜めの移動が早くならないように
     //ピタゴラスの定理を使う
 
-    Vector3 position = new Vector3(0.0f,0.5f,0.0f);
+    Vector3 position = new Vector3(0.0f,-4.5f,0.0f);
 
     public float _speed = 0.1f;
     Renderer rend;
