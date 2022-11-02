@@ -13,3 +13,6 @@ Repository for tidily implementing mathematics.
 
 ・Circular Motion, "Implementation of Circular Motion by Centripetal Force"  
 （円運動、「向心力による円運動の実装」）
+
+・Tramsform_AxisRotation "Transform rotation implementation around X axis".  
+（行列（同時座標）「X軸を中心としたTransform回転実装」）
