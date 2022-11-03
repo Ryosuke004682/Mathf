@@ -15,4 +15,8 @@ Repository for tidily implementing mathematics.
 （円運動、「向心力による円運動の実装」）
 
 ・Tramsform_AxisRotation "Transform rotation implementation around X axis".  
-（行列（同時座標）「X軸を中心としたTransform回転実装」）
+（行列（同時座標）「X軸を中心としたTransform回転実装」）  
+  Tramsform_AxisRotation "Transform rotation implementation around Y axis".  
+（行列（同時座標）「Y軸を中心としたTransform回転実装」）  
+  Tramsform_AxisRotation "Transform rotation implementation around Z axis".  
+（行列（同時座標）「Z軸を中心としたTransform回転実装」）
