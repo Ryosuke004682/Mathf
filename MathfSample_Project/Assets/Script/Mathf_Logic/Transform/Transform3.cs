@@ -1,21 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
-public class Transform1 : MonoBehaviour
+public class Transform3 : MonoBehaviour
 {
     public Renderer rend;
     public Color color = Color.red;
-
-    Vector3 _interval;
-    Quaternion _rotation;
+    Vector3 position;
+    Quaternion rotation;
 
     private void Start()
     {
-        float X, Y, Z;
-
         rend = GetComponent<Renderer>();
+        
+        float X, Y, Z;
 
         X = Mathf.Abs(transform.position.x);
         Y = Mathf.Abs(transform.position.y);
@@ -37,30 +35,29 @@ public class Transform1 : MonoBehaviour
             }
         }
 
-        _interval = transform.position;
-        _rotation = transform.rotation;
-
+        position = transform.position;
+        rotation = transform.rotation;
+        
     }
+
     private void FixedUpdate()
     {
         float angle = 2.0f * Mathf.PI * ((Time.time / 10.0f) % 1);
 
         Matrix4x4 matrix = Matrix4x4.identity;
 
+        matrix.m00 =  Mathf.Cos(angle); 
+        matrix.m01 = -Mathf.Sin(angle);
+
+        matrix.m10 =  Mathf.Sin(angle);
         matrix.m11 =  Mathf.Cos(angle);
-        matrix.m12 = -Mathf.Sin(angle);
 
-        matrix.m21 =  Mathf.Sin(angle);
-        matrix.m22 =  Mathf.Cos(angle);
 
-        transform.position = matrix * _interval;
-        transform.rotation = _rotation;
-
-        transform.Rotate(angle * 360.0f / (2.0f * Mathf.PI) , 0.0f , 0.0f , Space.World);
+        transform.position = matrix * position;
+        transform.rotation = rotation;
+        transform.Rotate(0.0f,0.0f,angle * 360.0f / (2.0f * Mathf.PI) , Space.World);
 
         rend.material.color = color;
-        
 
     }
-
 }
