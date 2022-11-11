@@ -48,7 +48,7 @@ public class Transform4 : MonoBehaviour
 
         forward = Vector3.Normalize(obj.transform.position);
 
-        up   = Vector3.forward;
+        up   = new Vector3(0.0f,0.0f,1.0f);
         side = Vector3.Cross(up , forward);
         side = Vector3.Normalize(side);
         up   = Vector3.Cross(forward,side);
