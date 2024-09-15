@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Transform4 : MonoBehaviour
 {
+<<<<<<< HEAD
     //YŽ²‰ñ“]‚³‚¹‚Â‚ÂAˆÚ“®Ž²‚Å“ü—Í‚µ‚Ä‚Ý‚½‚¢
 
     public Renderer rend;
@@ -20,10 +21,29 @@ public class Transform4 : MonoBehaviour
 
         float X, Y, Z;
 
+=======
+    Vector3 position;
+    Matrix4x4 matrix;
+    public Renderer rend;
+    public Color color = Color.red;
+
+    GameObject obj;
+
+    private void Start()
+    {
+        float X, Y, Z;
+
+        rend = GetComponent<Renderer>();
+        obj = GameObject.Find("Sphere");
+
+        position = transform.position;
+
+>>>>>>> origin/MyBranch
         X = Mathf.Abs(transform.position.x);
         Y = Mathf.Abs(transform.position.y);
         Z = Mathf.Abs(transform.position.z);
 
+<<<<<<< HEAD
         if((X > Y) && (X > Z))
         {
            color = Color.magenta;
@@ -31,6 +51,15 @@ public class Transform4 : MonoBehaviour
         else
         {
             if(Y > Z)
+=======
+        if ((X > Y) && (X > Z))
+        {
+            color = Color.magenta;
+        }
+        else
+        {
+            if (Y > Z)
+>>>>>>> origin/MyBranch
             {
                 color = Color.cyan;
             }
@@ -38,14 +67,20 @@ public class Transform4 : MonoBehaviour
             {
                 color = Color.yellow;
             }
+<<<<<<< HEAD
         }
 
         position = transform.position;
         rotation = transform.rotation;
+=======
+
+        }
+>>>>>>> origin/MyBranch
     }
 
     private void FixedUpdate()
     {
+<<<<<<< HEAD
         float angle = 2.0f * (Time.time / 2.0f);
         Matrix4x4 first_matrix = Matrix4x4.identity;
 
@@ -74,4 +109,35 @@ public class Transform4 : MonoBehaviour
 
     }
 
+=======
+        Vector3 side, up, forward;
+
+        forward = Vector3.Normalize(obj.transform.position);
+
+        up   = new Vector3(0.0f,0.0f,1.0f);
+        side = Vector3.Cross(up , forward);
+        side = Vector3.Normalize(side);
+        up   = Vector3.Cross(forward,side);
+
+
+        matrix = Matrix4x4.identity;
+
+        matrix.m00 = side.x; matrix.m01 = up.x; matrix.m02 = forward.x;
+
+        matrix.m10 = side.y; matrix.m11 = up.y; matrix.m12 = forward.y;
+
+
+        matrix.m20 = side.z; matrix.m21 = up.z; matrix.m22 = forward.z;
+
+        transform.position = matrix * position;
+        transform.LookAt(obj.transform.position, new Vector3(0.0f, 0.0f, 1.0f));
+
+        rend.material.color = color;
+
+
+    }
+
+
+
+>>>>>>> origin/MyBranch
 }
