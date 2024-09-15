@@ -42,7 +42,7 @@ public class Transform3 : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float angle = 2.0f * Mathf.PI * ((Time.time / 10.0f) % 1);
+        float angle = 3 * (Time.time / 5.0f);
 
         Matrix4x4 matrix = Matrix4x4.identity;
 

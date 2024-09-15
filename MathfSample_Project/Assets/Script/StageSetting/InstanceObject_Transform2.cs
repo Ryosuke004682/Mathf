@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class InstanceObject_Transform2 : MonoBehaviour
 {
+<<<<<<< HEAD
+   
+=======
     public GameObject cube;
     private const float objCount = 20;
     private const float fInterval = 0.5f;
@@ -36,4 +39,5 @@ public class InstanceObject_Transform2 : MonoBehaviour
         }
 
     }
+>>>>>>> origin/MyBranch
 }
